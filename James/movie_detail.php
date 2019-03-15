@@ -50,7 +50,7 @@
         session_start();
 
         $_SESSION['movieID'] = 4;
-        $_SESSION['userID'] = 1;
+        $_SESSION['userID'] = 2;
         $movieID = $_SESSION['movieID'];
         $userID = $_SESSION['userID'];
         $myJSON = json_encode($movieID);
@@ -59,7 +59,6 @@
         $sql = "SELECT title, poster, releasedate, description FROM movies WHERE movieID = $movieID";
         $result = mysqli_query($conn,$sql);
         $row = mysqli_fetch_array($result);
-        
     ?>
 
 
@@ -84,7 +83,8 @@
                         echo '<img src='.$imgpath.$row[1].' style = "width:100%; max-width:260px; height:auto"> <br>';
                         echo "<h3>".$row[2]."</h3>";
                     ?>
-                <button class="btn btn-default" id="atl_btn" onclick="addtoList(<?php echo $movieID?>,<?php echo $userID ?>)"><p id="btn_content">click</p></button>
+                <button class="btn btn-default" id="atl_btn" value></button>
+                <!-- <p id="testp">111</p> -->
                 </div>
                 <div class="col-xm-9 col-sm-9 col-md-9 col-lg-9">
 
@@ -118,9 +118,9 @@
             </div>
     </footer>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="//amp.azure.net/libs/amp/2.2.4/azuremediaplayer.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 
 

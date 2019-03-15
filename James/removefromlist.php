@@ -1,15 +1,25 @@
 <?php
-    include 'connection.php';
+    session_start();
+    // $movieid = $_REQUEST['mid'];
+    // $userid = $_REQUEST['uid'];
+    $movieid = $_SESSION['movieID'];
+    $userid = $_SESSION['userID'];
 
-    $movieid = $_REQUEST['mid'];
-    $userid = $_REQUEST['uid'];
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "movielover";
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
 
     $removefromlist_sql = "DELETE FROM watchlist 
                         WHERE userID = $userid and movieID = $movieid";
 
-    if ($conn->query($addtolist_sql) === TRUE) {
-        echo "Y";
+    if ($conn->query($removefromlist_sql) === TRUE) {
+        echo "success";
     } else {
-        echo "Error: " . $release_sql . "<br>" . $conn->error;
+        echo "Error: " . $removefromlist_sql . "<br>" . $conn->error;
     }
+
+    $conn->close();
 ?>

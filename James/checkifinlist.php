@@ -1,13 +1,28 @@
 <?php
-    include 'connection.php';
+    session_start();
 
-    $userid = $_REQUEST['uid'];
-    $movieid = $_REQUEST['mid'];
+    // $userid = $_REQUEST['uid'];
+    // $movieid = $_REQUEST['mid'];
+    $movieid = $_SESSION['movieID'];
+    $userid = $_SESSION['userID'];
 
-    $checkifinlist_sql = "SELECT listID
-                        FROM watchlist
-                        WHERE EXISTS (SELECT listid from watchlist where userID = '$userid' and movieID = '$movieid')";
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "movielover";
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+    $checkifinlist_sql = "SELECT * FROM watchlist WHERE userID = $userid and movieID = $movieid";
     $result = mysqli_query($conn, $checkifinlist_sql);
+    $array = mysqli_fetch_all($result);
+    $a = count($array);
 
-    echo $result;
+    if ($a == 0) {
+        echo "a";
+    }else{
+        echo "r";
+    }
+
+    $conn->close();
 ?>
