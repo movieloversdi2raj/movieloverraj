@@ -1,19 +1,15 @@
 <?php
-    // $x = $_REQUEST['mid']
-    $movieid = $_REQUEST['mid'];
-    $userid = $_REQUEST['uid'];
-    // $movieid = $_SESSION['movieId'];
-
     include 'connection.php';
 
-    $addtolist_sql = "INSERT INTO watchlist (userID, movieID) 
-                    VALUES ($userid, $movieid)";
+    $movieid = $_REQUEST['mid'];
+    $userid = $_REQUEST['uid'];
+
+    $removefromlist_sql = "DELETE FROM watchlist 
+                        WHERE userID = $userid and movieID = $movieid";
+
     if ($conn->query($addtolist_sql) === TRUE) {
         echo "Y";
     } else {
         echo "Error: " . $release_sql . "<br>" . $conn->error;
     }
-
 ?>
-
-

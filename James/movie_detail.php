@@ -67,7 +67,7 @@
 <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////   -->
     <div class="row">
         <div class="col-xm-2 col-sm-2 col-md-2 col-lg-2"></div>
-        <div class="col-xm-8 col-sm-8 col-md-8】 col-lg-8">
+        <div class="col-xm-8 col-sm-8 col-md-8 col-lg-8">
             <div id="movietitle" class="row">
             <h1 id="movieTitle"><?php echo $row[0]?></h1>
             </div>
@@ -84,7 +84,7 @@
                         echo '<img src='.$imgpath.$row[1].' style = "width:100%; max-width:260px; height:auto"> <br>';
                         echo "<h3>".$row[2]."</h3>";
                     ?>
-                <button class="btn btn-default" onclick="addtoList(<?php echo $movieID?>,<?php echo $userID ?>)"><p id="btn_content">click</p></button>
+                <button class="btn btn-default" id="atl_btn" onclick="addtoList(<?php echo $movieID?>,<?php echo $userID ?>)"><p id="btn_content">click</p></button>
                 </div>
                 <div class="col-xm-9 col-sm-9 col-md-9 col-lg-9">
 
