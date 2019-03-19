@@ -101,11 +101,40 @@
                     <div class="row">
                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
                             <div class="form-horizontal col-xs-10 col-sm-10 col-md-10 col-lg-10">
-                              <form action="insert.php" method="POST">
+                              <form action="insert.php" method="POST">  
+                                </div> <div class="form-group">
+                                    <label class="control-lable col-xs-2 col-sm-2 col-md-2 col-lg-2 lable_align" for="username">Full Name:</label>
+                                    <div class="col-xs-10 col-sm-10 ol-md-10 col-lg-10">
+                                            <input type="text" id="fullname" name="inputfullname" class="text_field form-control" placeholder="Full Name" onchange="input_check(this.id)">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-lable col-xs-2 col-sm-2 col-md-2 col-lg-2 lable_align" for="username">Username:</label>
+                                    <div class="col-xs-10 col-sm-10 ol-md-10 col-lg-10">
+                                            <input type="text" id="username" name="inputusername" class="text_field form-control" placeholder="Username" onchange="input_check(this.id)">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-lable col-xs-2 col-sm-2 col-md-2 col-lg-2 lable_align" for="email">Email:</label>
+                                        <div class="col-xs-10 col-sm-10 ol-md-10 col-lg-10">
+                                                <input type="text" id="formemail" name="inputemail" class="text_field form-control" placeholder="Email" onchange="input_check(this.id)">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-lable col-xs-2 col-sm-2 col-md-2 col-lg-2 lable_align" for="area">Area:</label>
+                                        <div class="col-xs-10 col-sm-10 ol-md-10 col-lg-10">
+                                                <input type="text" id="formarea" name="inputarea" class="text_field form-control" placeholder="Area" onchange="input_check(this.id)">
+                                        </div>
+                                    </div>
                                 <div class="form-group" >
-                                        <label class="control-lable col-xs-2 col-sm-2 col-md-2 col-lg-2 lable_align" for="credit_card">Credit card number:</label>
+                                        <label class="control-lable col-xs-2 col-sm-2 col-md-2 col-lg-2 lable_align" for="credit_card">Credit card:</label>
                                         <div class="col-xs-10 col-sm-10 ol-md-10 col-lg-10">
                                                 <input type="text" maxlength="16" id="cardno" name="inputccnumber" class="text_field form-control" placeholder="Credit card number" onchange="input_check(this.id);checklen(this)">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-lable col-xs-2 col-sm-2 col-md-2 col-lg-2 lable_align" for="password">Password:</label>
+                                        <div class="col-xs-10 col-sm-10 ol-md-10 col-lg-10">
+                                                <input type="text" id="formpassword" name="inputpassword" class="text_field form-control" placeholder="Password" onchange="input_check(this.id)">
                                         </div>
                                     </div>
                                 <div class="form-group">
@@ -113,33 +142,24 @@
                                         <div class="col-xs-10 col-sm-10 ol-md-10 col-lg-10">
                                                 <input type="text" id="nameoncard" name="inputnameoncard" class="text_field form-control" placeholder="Name on the card" onchange="input_check(this.id)">
                                         </div>
-                                    </div>
-                                <div class="form-group">
-                                        <label class="control-lable col-xs-2 col-sm-2 col-md-2 col-lg-2 lable_align" for="username">Username:</label>
+                                    </div> 
+                                    <div class="form-group">
+                                        <label class="control-lable col-xs-2 col-sm-2 col-md-2 col-lg-2 lable_align" for="password">Valid Date:</label>
                                         <div class="col-xs-10 col-sm-10 ol-md-10 col-lg-10">
-                                                <input type="text" id="username" name="inputusername" class="text_field form-control" placeholder="username" onchange="input_check(this.id)">
+                                                <input type="text" id="vdate" maxlength="4" name="inputvdate" class="text_field form-control" placeholder="Valid Date" onchange="input_check(this.id)">
                                         </div>
-                                    </div>
-                                <div class="form-group">
-                                        <label class="control-lable col-xs-2 col-sm-2 col-md-2 col-lg-2 lable_align" for="password">Create password:</label>
+                                    </div>    
+                                    <div class="form-group">
+                                        <label class="control-lable col-xs-2 col-sm-2 col-md-2 col-lg-2 lable_align" for="cvv">CVV:</label>
                                         <div class="col-xs-10 col-sm-10 ol-md-10 col-lg-10">
-                                                <input type="text" id="formpassword" name="inputpassword" class="text_field form-control" placeholder="Password" onchange="input_check(this.id)">
+                                                <input type="text" maxlength="3" id="cvv" name="inputcvv" class="text_field form-control" placeholder="CVV" onchange="input_check(this.id)">
                                         </div>
-                                    </div>
-                                <div class="form-group">
-                                        <label class="control-lable col-xs-2 col-sm-2 col-md-2 col-lg-2 lable_align" for="area">Area:</label>
-                                        <div class="col-xs-10 col-sm-10 ol-md-10 col-lg-10">
-                                                <input type="text" id="formarea" name="inputarea" class="text_field form-control" placeholder="area" onchange="input_check(this.id)">
-                                        </div>
-                                    </div>
-                                <div class="form-group">
-                                        <label class="control-lable col-xs-2 col-sm-2 col-md-2 col-lg-2 lable_align" for="email">Email:</label>
-                                        <div class="col-xs-10 col-sm-10 ol-md-10 col-lg-10">
-                                                <input type="text" id="formemail" name="inputemail" class="text_field form-control" placeholder="Email" onchange="input_check(this.id)">
-                                        </div>
-                                    </div>
+                                    </div>                       
+                                
+                                
+                                
                                 <div class="form-group form_align col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                        <input type="checkbox" id="check">I have read the <a id="law_file">terms and conditions</a>.
+                                        <input type="checkbox" id="check">I have read the terms and conditions.
                                     </div>
                                 <div class="form-group form_align col-xs-12 col-sm-12 col-md-12 col-lg-12" >
                                         <button type="submit" class="btn btn-default btn-md" value="Register">Register</button>
@@ -150,10 +170,7 @@
                             </div>
                             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
                         </div>
-                        <div id="confirm_message">
-                            <p class="alert alert-success">Hi, <a id="user_name"></a><br> thanks for the payment using  your <a id="cardT"></a> 
-                                credit  card  no. xxxx xxxx xxxx <a id="card_num"></a>. We will email your receipt on <a id="email"></a> </p>
-                        </div>
+                        
                         
                 </form>
 

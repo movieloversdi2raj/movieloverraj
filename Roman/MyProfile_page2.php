@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Internet Programming Assignment</title>
+    <title>Movie Lover</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     
@@ -9,30 +9,18 @@
 </head>
 <body>
    
-    <header>
+    <header> 
         <div id="header">
-        <table>
-            <tr>
-                
-               
-                <td>
-                    <ul id="menu">
-                        <li>
-                            <a href="IPassignment.html" target="_blank">Home</a>
-                            |
-                        </li>
-                        <li>
-                            <a href="IPassignment_page2.html" target="_blank">Movies</a>
-                        </li>
-                        |
-                        <li>
-                            <a href="IPassignment_page2.html" target="_blank">My Menu</a>
-                        </li>
-                    </ul>
-                </td>
-                <td id="logo"><img id="logo_pic" src="img/MOVIE%20LOVER%20LOGO.jpg"></td>   
-            </tr>
-        </table>
+        <a class="navbar-brand" href="#"><img id="logo_pic" src="img/logomovielover.png"></a>
+        <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+                    <li><a href="#section1">Home</a></li>
+                    <li><a href="MovieList.php">Movies</a></li>
+                    <li><a href="#section3">News</a></li>
+                    <li><a href="#section4">Contact Us</a></li>
+                    <li>
+        </ul>
+        </div>
         </div>
     </header>
     <div class="container">
@@ -177,7 +165,13 @@
                                 <div class="form-group">
                                         <label class="control-lable col-xs-2 col-sm-2 col-md-2 col-lg-2 lable_align" for="cvv">CVV:</label>
                                         <div class="col-xs-10 col-sm-10 ol-md-10 col-lg-10">
-                                                <input type="text" id="cvv" name="updatecvv" class="text_field form-control" placeholder="CVV" onchange="input_check(this.id)">
+                                                <input type="text" maxlength="3" id="cvv" name="updatecvv" class="text_field form-control" placeholder="CVV" onchange="input_check(this.id)">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-lable col-xs-2 col-sm-2 col-md-2 col-lg-2 lable_align" for="cvv">Valid Date:</label>
+                                        <div class="col-xs-10 col-sm-10 ol-md-10 col-lg-10">
+                                                <input type="text" maxlength="4" id="updatevdate" name="updatevdate" class="text_field form-control" placeholder="Valid Date" onchange="input_check(this.id)">
                                         </div>
                                     </div>
                                     <br>
@@ -211,7 +205,7 @@
                         <div class="col-lg-8  col-md-8 col-sm-8 col-xs-8"></div>
                   
                
-                        <section class="Secondtab">    
+                        <section class= "secondtab">    
       
             <div id="Second" class="tabcontent">
             
@@ -232,38 +226,23 @@
                            for ($r = 0; $r < count($row); $r++) {
                             echo "<div id='mblock' >";
                             echo "<table>";
-                                    echo "<tr>";
-                                        echo "<td>";
-                                        echo "<h3>".$row[$r][0]."</h3>";
-                                        echo "</td>";
-                                    echo "</tr>";
-                            
+                            echo "<br />";
                                     echo "<tr>";
                                     echo "<td>";
-                                    echo "<p>".$row[$r][1]."</p>";
+                                    echo "<img src='img/".$row[$r][1]."' width=150px >";
                                     echo "</td>";
-                                echo "</tr>";
-
-                                echo "<tr>";
-                                echo "<td>";
-                                echo "<p>".$row[$r][2]."</p>";
-                                echo "</td>";
-                            echo "</tr>";
-
-                            echo "<tr>";
-                            echo "<td>";
-                            echo "<p>".$row[$r][3]."</p>";
-                            echo "</td>";
-                        echo "</tr>";
-                        echo "<tr>";
-                            echo "<td>";
-                            echo "<p>".$row[$r][4]."</p>";
-                            echo "</td>";
-                        echo "</tr>";
+                                    echo "<td>";
+                                    echo "<h3>".$row[$r][0]."</h3>";
+                                    echo "<p>".$row[$r][2]."</p>";
+                                    echo "<p>".$row[$r][3]."</p>";
+                                    echo "<p>".$row[$r][4]."</p>";
+                                    echo "</td>";
+                                    echo "</tr>";
                             echo "</table>";
                             echo "</div>";
                             echo "<div style='height:3px'>";
                             echo "<hr class='style-eight'/>";
+                            
                             echo "</div>";
                         }
                         ?>
@@ -279,7 +258,7 @@
                                      </div>
                                             </div>
         <div class="container">
-            <section>
+            <section class= "thirdtab">
                 
                         <div class="row">
                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
@@ -294,13 +273,13 @@
         $movieID = 1;
         include 'connection.php';
         
-        $sql = "SELECT orderID, movieID, sessionID,userID, seats FROM tickets_order";
+        $sql = "SELECT title, releaseDate, sessionID, seats FROM tickets_order JOIN movies ON tickets_order.movieID = movies.movieID";
         $result = mysqli_query($conn,$sql);
         $row = mysqli_fetch_all($result);
     ?>
                     <?php
                            for ($r = 0; $r < count($row); $r++) {
-                            echo "<div id='mblock' >";
+                            echo "<div id='oblock' >";
                             echo "<table>";
                                     echo "<tr>";
                                         echo "<td>";
@@ -308,33 +287,26 @@
                                         echo "</td>";
                                     echo "</tr>";
                             
-                                    echo "<tr>";
+                                 echo "<tr>";
                                     echo "<td>";
-                                    echo "<p>".$row[$r][1]."</p>";
+                                    echo "Release Date:","<p>".$row[$r][1]."</p>";
+                                    echo "</td>";
+                                    echo "<td>";
+                                    echo "Session ID:","<p>".$row[$r][2]."</p>";
                                     echo "</td>";
                                 echo "</tr>";
-
                                 echo "<tr>";
-                                echo "<td>";
-                                echo "<p>".$row[$r][2]."</p>";
-                                echo "</td>";
-                            echo "</tr>";
-
-                            echo "<tr>";
-                            echo "<td>";
-                            echo "<p>".$row[$r][3]."</p>";
-                            echo "</td>";
-                        echo "</tr>";
-                        echo "<tr>";
-                            echo "<td>";
-                            echo "<p>".$row[$r][4]."</p>";
-                            echo "</td>";
-                        echo "</tr>";
+                                    echo "<td>";
+                                    echo "Amount of seats:","<p>".$row[$r][3]."</p>";
+                                    echo "</td>";
+                                echo "</tr>";
                             echo "</table>";
                             echo "</div>";
                             echo "<div style='height:3px'>";
                             echo "<hr class='style-eight'/>";
+                            
                             echo "</div>";
+                            
                         }
                         ?>
                                     </div>

@@ -29,15 +29,18 @@ if (!$conn) {
                 $email = $_POST['updateemail'];
                 $area = $_POST['updatelocation'];
                 $cvv = (int)$_POST['updatecvv'];
+                $vdate = (int)$_POST['updatevdate'];
                 $userID =1;
                
-               // $sql1 = "UPDATE $db_table1 SET fullname = '$fullname', userName = '$username', area = '$area', email = 'email', Ccnumber = '$cnum' where userID = $userID";
-                 
                 $sql = "UPDATE $db_table2 SET fullname = '$fullname', userName = '$username', area = '$area', email = 'email', Ccnumber = '$cnum' where userID = $userID";
+                $sql1 = "UPDATE $db_table1 SET NameOnCard = '$nameoncard', validDate = '$vdate', CVV = '$cvv' where Ccnumber = '$cnum'";
+                 
+               
                 
                 if (mysqli_query($conn, $sql)) {
-                   // if (mysqli_query($conn, $sql))
+                    if (mysqli_query($conn, $sql))
                     echo "New record created successfully";
+                    header("Location: http://localhost/movieloverraj/Roman/MyProfile_page2.php");
               } else {
                     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
               }

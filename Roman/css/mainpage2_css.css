@@ -1,6 +1,6 @@
 body{
     width: auto;
-    background-color: rgba(2, 24, 101, 0.979);
+    background-color: whitesmoke;
     background-attachment: fixed;
     background-size:cover;
     height: 100%;
@@ -8,17 +8,17 @@ body{
 header{
     position: relative;
     margin:-7px -7px 50px;
-    height: 120px;
+    height: 80px;
     background-image: url(headerback.jpg);
     box-shadow: 0px 2px 20px 0px black;
+    background-color: rgb(123, 123, 123);
 }
-.row{
-
-}
+ 
 
 #header {
     line-height: 120px;
     padding-top: 15px;
+    
 }
 header table{
     width: 60%;
@@ -31,13 +31,31 @@ header a{
 }
 
 header a:hover{
-    background-color: rgba(255, 17, 0, 0.836);
-    transition: background .1s ease-in-out;
+    color: #ccc;
+   
     text-decoration: none;
-    color: white;
+    
 }
+.mynavBar .search-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .mynavBar.search-container button:hover {
+    background: #ccc;
+  }
+  
+  .mynavBar.button:hover {
+    background: #ccc;
+  }
 #menu {
-    text-align: left;
+    text-align: right;
     padding-right: 20px;
     width: 100%;
 }
@@ -55,9 +73,10 @@ header a:hover{
     }
     #logo {
         text-align: left;
+        
     }
     #logo_pic{
-        height: 100px;
+        height: 40px;
         }
 
     #headertext{
@@ -74,8 +93,8 @@ header a:hover{
         padding-right: 40px;
     }
     #logo_pic{
-        height: 100px;
-        padding-left: 30px;
+        height: 20px;
+        padding-left: 50px;
        
     }
     #headertext{
@@ -85,10 +104,16 @@ header a:hover{
         
         section{
             margin:5px;
-            background-color: whitesmoke;
+            background-color: rgb(184, 181, 181);
             text-align: left;
             position: relative;
             height: auto;
+        }
+        .secondtab{
+            background-color: whitesmoke;
+        }
+        .thirdtab{
+            background-color: whitesmoke;
         }
         
         
@@ -108,7 +133,7 @@ header a:hover{
             
         }
         #tabs_section{
-            background-color: whitesmoke;
+            background-color: rgb(184, 181, 181);
             box-shadow: 15px black;
         }
         h3{ font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -134,7 +159,7 @@ header a:hover{
         }
 
         .tab button{
-            background-color:darkblue;
+            background-color:rgba(57, 63, 63, 0.836);
             outline: none;
             border: none;
             color: white;
@@ -143,7 +168,7 @@ header a:hover{
             width:33%;
         }
         .tab button:hover {
-            background-color:red;
+            background-color:rgb(123, 123, 123);
           }
           .tabcontent{
               display: none;
@@ -265,7 +290,7 @@ padding-left: 10px;
 text-align: left;
 background-color: darkblue;
 color: white;
-box-shadow: 0px 2px 20px 0px black;
+box-shadow:  5px 10px black;
 }
 .mylist td{
     border: 1px solid gray;
@@ -277,17 +302,15 @@ box-shadow: 0px 2px 20px 0px black;
     float: left;
 }
 .moviedetail{
-    border:1px solid darkblue;
     padding: 10px; 
-    box-shadow: 20px black;
-    background-color: whitesmoke;
+
+    background-color: rgb(184, 181, 181); 
 
 } 
 .orderdetail{
-    border:1px solid darkblue;
     padding: 10px; 
-    box-shadow: 20px black;
-    background-color: whitesmoke;
+    
+    background-color: rgb(184, 181, 181);
 }
 .outline{
     line-height: 140%;
@@ -334,7 +357,7 @@ padding-left: 92px;
     padding: 20px;
     border: 1px solid rgb(47, 73, 201);
     width: 100%;
-    height: 100%
+    height: 80%
   }
   .form{
 
@@ -361,7 +384,7 @@ padding-left: 92px;
   .style-eight {
     height: 10px;
     border: 1;
-    box-shadow: inset 0 9px 9px -3px rgba(1, 49, 93, 0.8);
+    box-shadow: inset 0 9px 9px -3px whitesmoke;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
@@ -382,8 +405,8 @@ padding-left: 92px;
         margin-right: -300%; 
     }
     #myBtn{
-        border: 1px solid rgba(2, 24, 101, 0.979);
+        border: 1px solid rgba(57, 63, 63, 0.836);
         padding: 8px;
-        background-color: rgba(2, 24, 101, 0.979);
+        background-color: rgba(57, 63, 63, 0.836);
         color: white
     }
